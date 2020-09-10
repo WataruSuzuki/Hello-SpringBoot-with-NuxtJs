@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.jchankchan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +11,7 @@ public class DemoApplication {
 
 	@RequestMapping("/")
 	String index(){
-		return "Hello World!";
+		return "Hello JchanKchan!";
 	}
 
 	public static void main(String[] args) {
