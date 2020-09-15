@@ -34,16 +34,19 @@ export default {
   data() {
     return {
       kaomoji: "(- 人 -)",
+      message: "",
       response: ""
     };
   },
   methods: {
     async hello(msg) {
-      console.log(msg);
       this.kaomoji = "(・∀・)b";
-      this.response = await fetch(
-        "http://localhost:8080/hello?message=" + msg
-      ).then(res => res.data);
+      this.$axios
+        .$get("http://localhost:8080/hello?message=" + msg)
+        .then(res => {
+          console.log("response data", res);
+          this.response = res;
+        });
     }
   }
 };
